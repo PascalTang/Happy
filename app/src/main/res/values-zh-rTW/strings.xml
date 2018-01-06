@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PrayApplication</string>
+    <string name="app_name">禱告App</string>
 
     <string name="calendar_mon">M</string>
     <string name="calendar_tue">T</string>

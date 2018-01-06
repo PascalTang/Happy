@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 
 android {
     compileSdkVersion 26
@@ -14,8 +29,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL_IDENTITY_SERVER", '"https://register.prenetics.com/"')
+            buildConfigField("String", "BASE_URL_OneDNA", '"https://svcapi.prenetics.com/"')
+        }
+        debug {
+            buildConfigField("String", "BASE_URL_IDENTITY", '"http://service.testing.prenetics.com:8989/"')
+            buildConfigField("String", "BASE_URL_OneDNA", '"http://service.testing.prenetics.com:90/"')
         }
     }
+
 }
 
 dependencies {
@@ -38,4 +60,23 @@ dependencies {
     // + Gson Json parser
     compile 'com.google.code.gson:gson:2.8.2'
     // + Gson
+
+    // + rxjava2
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.7'
+    // RxJava2 Adapter
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    // + rxjava2
+
+    // + retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    //converter-gson
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // retrofit-mock
+    compile 'com.squareup.retrofit2:retrofit-mock:2.3.0'
+    // + retrofit
+    compile('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
+        transitive = true
+    }
+
 }
