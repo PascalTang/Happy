@@ -9,11 +9,3 @@
 .externalNativeBuild
 /gradle.properties
 /app/proguard-rules.pro
-.idea/gradle.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/runConfigurations.xml
-.idea/vcs.xml
-gradle/wrapper/gradle-wrapper.jar
-gradlew
-gradlew.bat
