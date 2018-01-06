@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="booking_calendar_weekdays">
+        <item>@string/calendar_sun</item>
+        <item>@string/calendar_mon</item>
+        <item>@string/calendar_tue</item>
+        <item>@string/calendar_wed</item>
+        <item>@string/calendar_thu</item>
+        <item>@string/calendar_fri</item>
+        <item>@string/calendar_sat</item>
+    </array>
+</resources>
