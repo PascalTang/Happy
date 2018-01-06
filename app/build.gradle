@@ -76,7 +76,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit-mock:2.3.0'
     // + retrofit
     compile('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
-        transitive = true;
+        transitive = true
     }
 
 }
