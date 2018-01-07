@@ -1,4 +1,4 @@
-package com.pascal.pray.android.utils.network;
+package com.pascal.pray.android.network;
 
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;

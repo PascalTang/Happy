@@ -1,4 +1,4 @@
-package com.pascal.pray.android.utils.network.volley;
+package com.pascal.pray.android.network.volley;
 
 import android.content.Context;
 import android.net.SSLCertificateSocketFactory;

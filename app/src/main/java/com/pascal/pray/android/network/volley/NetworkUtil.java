@@ -1,4 +1,4 @@
-package com.pascal.pray.android.utils.network.volley;
+package com.pascal.pray.android.network.volley;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
@@ -28,8 +27,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.pascal.pray.android.utils.network.volley.VolleyClientSSLSocketFactory;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.pascal.pray.android.utils.network.volley;
+package com.pascal.pray.android.network.volley;
 
 import android.support.annotation.Nullable;
 
@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-
 /**
  * Created by pascal on 12/30/16.
  */
