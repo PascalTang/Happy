@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 public interface RemoteControlService {
 
     @GET(ApiEndPoint.REMOTE_CONTROL_COMMANDS_V1)
-    Observable<ForceUpdateDataModel> checkUpdateApi(@Query("id") String id,
+    Observable<JsonData> checkUpdateApi(@Query("id") String id,
                                                     @Query("key") String key);
 
 

@@ -9,7 +9,7 @@ import android.util.AttributeSet;
  */
 
 public class CustomFontTextView extends android.support.v7.widget.AppCompatTextView {
-    public CustomFontTextView(Context context, @Nullable AttributeSet attrs) {
+    public CustomFontTextView(Context context,  AttributeSet attrs) {
         super(context, attrs);
         TypefaceManager.setTypeface(this, context, attrs);
     }

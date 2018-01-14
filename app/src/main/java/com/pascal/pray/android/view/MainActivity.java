@@ -1,33 +1,44 @@
 package com.pascal.pray.android.view;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.pascal.pray.android.BuildConfig;
 import com.pascal.pray.android.R;
 import com.pascal.pray.android.base.BaseActivity;
-import com.pascal.pray.android.network.AppSchedulerProvider;
-import com.pascal.pray.android.network.ForceUpdateDataModel;
-import com.pascal.pray.android.network.ForceUpdateModel;
-import com.pascal.pray.android.network.RemoteControlService;
-import com.pascal.pray.android.network.ServiceFactory;
-import io.reactivex.Observable;
+import com.pascal.pray.android.contract.ParyContract;
+import com.pascal.pray.android.presenter.ParyPresenter;
 
-public class MainActivity extends BaseActivity {
 
+public class MainActivity extends BaseActivity implements ParyContract.View , View.OnClickListener{
+    private ParyContract.Presenter mPresenter ;
+    private TextView mDataTV;
+    private Button mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        triggerRemoteControlApi(new ForceUpdateModel("0", "dev_mydnavn_dialog_update_app"));
+        mPresenter = new ParyPresenter(this , this);
+
+        mDataTV = (TextView)findViewById(R.id.tv_data);
+        mButton = (Button)findViewById(R.id.btn_add);
+        mButton.setOnClickListener(this);
+
     }
 
-    public Observable<ForceUpdateDataModel> triggerRemoteControlApi(ForceUpdateModel forceUpdateModel) {
-        RemoteControlService remoteControlService = ServiceFactory.createServiceFrom(RemoteControlService.class, BuildConfig.BASE_URL_OneDNA);
 
-        return remoteControlService
-                .checkUpdateApi(forceUpdateModel.getId(), forceUpdateModel.getKey())
-                .subscribeOn(AppSchedulerProvider.io());
+    @Override
+    public void setText(String s) {
+        mDataTV.setText(s);
+    }
+
+    @Override
+    public void onClick(View view) {
+        mPresenter.addSting(mDataTV.getText().toString());
     }
 }
 

@@ -1,3 +1,5 @@
+apply plugin: 'com.android.application'
+
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
@@ -7,7 +9,6 @@ buildscript {
         classpath 'io.fabric.tools:gradle:1.+'
     }
 }
-apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 
 repositories {
@@ -50,13 +51,32 @@ android {
     dexOptions {
 //        javaMaxHeapSize "4g"
     }
+
+    //
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
+
+    testCompile 'org.assertj:assertj-core:1.7.1'
+    testImplementation 'junit:junit:' + rootProject.junitVersion
+    testImplementation 'org.mockito:mockito-core:' + rootProject.mockitoVersion
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.9.1'
+
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
@@ -102,4 +122,5 @@ dependencies {
     // + apache
     compile "org.apache.httpcomponents:httpcore:4.3.2"
     compile "org.apache.httpcomponents:httpmime:4.3.5"
+
 }
