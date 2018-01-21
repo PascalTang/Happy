@@ -1,4 +1,4 @@
-package com.pascal.pray.android.utils.network;
+package com.pascal.pray.android.network;
 
 
 public interface ResponseListener {

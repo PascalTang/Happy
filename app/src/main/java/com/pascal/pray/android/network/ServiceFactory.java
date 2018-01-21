@@ -1,4 +1,4 @@
-package com.pascal.pray.android.utils.network;
+package com.pascal.pray.android.network;
 
 
 import android.support.annotation.NonNull;

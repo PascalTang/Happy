@@ -11,7 +11,6 @@ import android.widget.TextView;
  */
 
 public class TextViewUtils {
-
     public static void stripUnderlines(TextView textView) {
         Spannable s = new SpannableString(textView.getText());
         URLSpan[] spans = s.getSpans(0, s.length(), URLSpan.class);
